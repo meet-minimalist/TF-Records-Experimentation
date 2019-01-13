@@ -45,7 +45,7 @@ class loadDataset():
         img = cv2.imread(addr)
         if img is None:
             return None
-        img = cv2.resize(img, self.resize_size, interpolation=cv2.INTER_CUBIC)
+        img = cv2.resize(img, (self.resize_size[1], self.resize_size[0]), interpolation=cv2.INTER_CUBIC)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         return img, img.shape[0], img.shape[1]
     
